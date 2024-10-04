@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Pie Chart</title>
+    <!-- 引入Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+    <div id="pie-chart" style="width: 600px; height: 400px;"></div>
+
+    <script type="text/javascript">
+        // 定义标签
+        var labels = ['普通门诊', '特需门诊', '专家门诊'];
+
+        // 生成随机数据
+        var values = labels.map(function() {
+            return Math.round(Math.random() * 100);
+        });
+
+        // Plotly的饼图数据
+        var data = [{
+            values: values,
+            labels: labels,
+            type: 'pie'
+        }];
+
+        // Plotly的布局设置
+        var layout = {
+            height: 400,
+            width: 600
+        };
+
+        // 绘制饼图
+        Plotly.newPlot('pie-chart', data, layout);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>门诊类型分布</title>
+    <!-- 引入Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="pie-chart" style="width:100%;max-width:600px;height:400px;"></div>
+
+    <script type="text/javascript">
+        // 从服务器获取饼图的JSON数据
+        var data = {
+              "title": "产品销量统计",
+              "data": [
+                {
+                  "name": "普通门诊",
+                  "value": "30%"
+                },
+                {
+                  "name": "特需门诊",
+                  "value": "30%"
+                },
+                {
+                  "name": "专家门诊",
+                  "value": "40%"
+                }
+              ]
+            }
+
+        // 加载饼图到页面上的指定元素
+        Plotly.newPlot('pie-chart', JSON.parse(data));
+    </script>
+</body>
+</html>
